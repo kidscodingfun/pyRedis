@@ -1,6 +1,6 @@
 import redis
 
-r = redis.from_url("redis://red-d489ot4hg0os73857el0:6379")
+r = redis.from_url("redis://red-d48agnruibrs7394rujg:6379")
 
 #r.set('switch1', 'ON')
 #r.delete('key')
