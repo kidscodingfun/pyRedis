@@ -2,7 +2,7 @@ import redis
 
 r = redis.from_url("redis://red-d48agnruibrs7394rujg:6379")
 
-#r.set('switch1', 'ON')
+r.set('switch1', 'ON')
 #r.delete('key')
 print(r.get('switch1').decode())
 
