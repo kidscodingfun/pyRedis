@@ -23,6 +23,6 @@ async def root():
     return {"message": "Hello World"}
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
+def read_item(item_id: str, q: Optional[str] = None):
     value = r.get(item_id).decode()
     return {item_id: value}
