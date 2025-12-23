@@ -11,16 +11,16 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-from typing import Optional
+from typing import Optional, Annotated
 
-from fastapi import FastAPI
+from fastapi import FastAPI,Header
 
 app = FastAPI()
 
 
 @app.get("/")
-async def root(name: str, age: int):
-    return {"name": name,"age":age}
+async def root(name: str, age: int,token: Annotated[str | None, Header()] = None):
+    return {"name": name,"age":age,"token":token}
 
 @app.get("/items/{item_id}")
 def read_item(item_id: str, q: Optional[str] = None):
